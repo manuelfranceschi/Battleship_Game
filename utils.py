@@ -10,15 +10,6 @@ def colocar_barco(barco, tablero):
         tablero[casilla] = "O"
     return tablero
 
-def disparar(casilla, tablero):
-    if tablero[casilla] == "O":
-        print("Tocado")
-        tablero[casilla] = "X"
-    else:
-        print("Agua")
-        tablero[casilla] = "A"
-    return tablero
-
 def crear_barco(eslora): #eslora es la longitud del barco
     casilla_0 = (random.randint(0,9), random.randint(0,9)) #casilla en la que empezará
     orientacion = random.choice(["Vertical", "Horizontal"]) #orientacion por donde se creara el barco

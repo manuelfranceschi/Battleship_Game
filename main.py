@@ -35,7 +35,7 @@ while jugando == False:
         utils.disparar(coordenada, tablero_usuario_ataques, tablero_bot_barcos)
         
         if tablero_usuario_ataques[coordenada] == "X":
-            utils.eliminar_barco(tablero_bot_barcos)
+            #utils.eliminar_barco(tablero_bot_barcos)
             usuario_turno = True
         else:
             usuario_turno = False

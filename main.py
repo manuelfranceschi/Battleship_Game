@@ -10,18 +10,21 @@ tamagno = int(input("Tamaño del tablero:"))
 
 tablero_usuario_ataques = utils.crear_tablero(tamagno)
 tablero_usuario_barcos = utils.colocar_barcos(utils.crear_tablero(tamagno))
-turno_jugador = True
+usuario_turno = True
+
 
 tablero_bot_ataques = utils.crear_tablero(tamagno)
 tablero_bot_barcos = utils.colocar_barcos(utils.crear_tablero(tamagno))
-turno_bot = False
+bot_turno = False
 
 # Empieza la partida
 
 jugando = False
+# Para salir puede aplicarse recursividad de una funcion o
+# while usuario_barcos > 0 or bot_barcos > 0:
 while jugando == False:
     # Turno Jugador
-    while turno_jugador == True:
+    while usuario_turno == True:
         utils.imprimir_tableros(tablero_usuario_ataques, tablero_usuario_barcos)
 
         coordenada = utils.pasar_a_coordenadas(input("Escribe unas coordenadas (x,y)"))
@@ -30,23 +33,23 @@ while jugando == False:
         utils.disparar(coordenada, tablero_usuario_ataques, tablero_bot_barcos)
         
         if tablero_usuario_ataques[coordenada] == "X":
-            turno_jugador = True
+            usuario_turno = True
         else:
-            turno_jugador = False
-            turno_bot = True
+            usuario_turno = False
+            bot_turno = True
 
     # Turno Bot
-    while turno_bot == True:
+    while bot_turno == True:
         coordenada = tuple(utils.crear_barco(1)[0]) # Reutilizacion codigo
         print(coordenada)
 
         utils.disparar(coordenada, tablero_bot_ataques, tablero_usuario_barcos)
         
         if tablero_bot_ataques[coordenada] == "X":
-            turno_bot = True
+            bot_turno = True
         else:
-            turno_bot = False
-            turno_jugador = True
+            bot_turno = False
+            usuario_turno = True
             
 
 

@@ -48,9 +48,7 @@ def colocar_barcos(tablero):
                 for barco in flota:
                     colocar_barco(barco, tablero)
                 return tablero
-
-# Funciones juego
-            
+# Funciones juego         
 def pasar_a_coordenadas(coord):
     coord = coord.split(",")
     coord = [int(numero) for numero in coord]
@@ -60,19 +58,22 @@ def pasar_a_coordenadas(coord):
 def imprimir_tableros(tablero_ataques, tablero_usuario):
     print(f"{tablero_ataques} \n {"Tablero ataques".center(40)} \n \n {"*" * 43} \n \n{tablero_usuario} \n {"Tablero jugador".center(40)}")
 
+
+def disparar(casilla, tablero_usuario_ataques, tablero_barcos_enemigo):
+    if tablero_barcos_enemigo[casilla] == "O":
+        print("Tocado")
+        tablero_barcos_enemigo[casilla],tablero_usuario_ataques[casilla] = "X", "X"
+    else:
+        print("Agua")
+        tablero_barcos_enemigo[casilla],tablero_usuario_ataques[casilla] = "A", "A"
+    return tablero_usuario_ataques, tablero_barcos_enemigo
+
 # Crear Clases
             
 # Tablero: Ya que habrá uno para cada jugador, y dos para comparar
             
 # Jugador: Ya que cada jugador tendrá su tablero, tendrá n barcos que 
 # pueden ser destruidos, acciones como disparar, etc.
-            
-class Jugador:
-    def __init__(self,tablero, nombre="Usuario"):
-        self.nombre = nombre
-        self.tablero = tablero
-
-            
 # Partida: Cada partida que se cree puede tener:
 # 1. Jugadores (O jugador)
 # 2. Tablero
@@ -80,10 +81,4 @@ class Jugador:
 # 4. Opciones de dificultad
 # 5. Salir, reanudar partida, etc.
 
-"""
-Cosas a mejorar
-1. Creacion de clases para inicializar objetos
-2. Seria optimo que al crear un barco se le pase tanto la eslora como el tablero 
-con el que pueda tener unas coordenadas máxima donde pueda
-crearse, así como tambien limitarlos para que no se salgan de esa posición
-"""
+print(tuple(crear_barco(1)[0]))

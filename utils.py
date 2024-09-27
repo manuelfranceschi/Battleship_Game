@@ -68,6 +68,13 @@ def disparar(casilla, tablero_usuario_ataques, tablero_barcos_enemigo):
         tablero_barcos_enemigo[casilla],tablero_usuario_ataques[casilla] = "A", "A"
     return tablero_usuario_ataques, tablero_barcos_enemigo
 
+# Funcion que compruebe que si un barco en sus coordenadas EN EL MAPA todos  sus valores son X, que se elimine.
+#def eliminar_barco(tablero_enemigo):
+    #for i, value in enumerate(tablero_enemigo):
+      #  if tablero_enemigo[i] == "X":
+        #    print(i, value)
+            #list(tablero_enemigo).pop(i)
+
 # Crear Clases
             
 # Tablero: Ya que habrá uno para cada jugador, y dos para comparar

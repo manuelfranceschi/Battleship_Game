@@ -87,5 +87,3 @@ def disparar(casilla, tablero_usuario_ataques, tablero_barcos_enemigo):
 # 3. Numero de barcos
 # 4. Opciones de dificultad
 # 5. Salir, reanudar partida, etc.
-
-print(tuple(crear_barco(1)[0]))

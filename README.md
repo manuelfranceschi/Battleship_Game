@@ -1,7 +1,8 @@
-# Proyecto hundir el barco:
+# Battleship:
 
-Cosas que he añadido:
+Juego de hundir la flota con Python
 
+Actualizaciones:
 1. En la funcion crear_barco:
     - Que no se pueda crear un barco que se salga del tablero, mediante recursividad.
 2. En la función colocar_barcos:
@@ -12,10 +13,8 @@ Cosas que he añadido:
 4. Funciones varias:
     - Funcion para pasar las coordenadas que escribe al usuario a una tupla de dos elementos. Falta añadir comprobaciones al string que se pide
     - Funcion para imprimir todos los tableros de un jugador e indicando cual es cada uno de los dos para mejor experiencia de usuario. Es interesante imprimir los 4 tableros cuando haya un ganador y ver como quedaron los tableros con sus disparos.
-    
-
+      
 Cosas que se pueden mejorar en el programa:
-
 1. Creacion de clases para inicializar objetos, ejemplo: los jugadores, tableros, partidas… haría el codigo mucho más legible y óptimo
 2. Funcion que compruebe que si un barco en sus coordenadas todos  sus valores son X, que se elimine.
 3. De momento, la ejecución de la partida no existe. Sigue jugando hasta el fin. La manera que creo mas relevante es si el jugador se queda sin barcos.
